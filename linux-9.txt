@@ -14,7 +14,38 @@ file discriptors
 2 -- > std err
 
 
-> --- it will override the data 
->> -- it will append the data
+> --- it will override the data (re direct std output)
+>> -- it will append the data (append std output)
+
+
+--i need to stop the above cron job
+------------------------------------ 
+for that we can use before that cron syntax we can add #
+--># */1 * * * * /home/ubuntu/hello.sh > /home/ubuntu/hello.log 2>&1---it will stop the cron job
+
+-- i need to stop that cron job 
+--------------------------------
+simply remove the # symbol
+
+I want to delete the cron tab 
+-----------------------------
+crontab -ir--this command ask permission and delete
+crontab -r -- =this command delete without permission
+
+for crontab scheduled or not 
+crontab -l
+
+for crontab execution 
+crontab -er
+
+--if we want to give permissions for two users 
+vi etc/cron.allow--command for allow user for crontab
+
+
+Remote access commands
+---------------------
+
+
+
 
 
