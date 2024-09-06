@@ -45,6 +45,10 @@ vi etc/cron.allow--command for allow user for crontab
 Remote access commands
 ---------------------
 
+Top command---to check the all cpu and ram usage for all the systems in linux server
+df -h --- to check disk usage
+
+
 
 
 
