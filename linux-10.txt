@@ -1,0 +1,38 @@
+linux-10p:
+----------
+--if we want to restart the server ---server sshd server ---`then only what ever the configurations changes in that file it aill update and works.
+
+scp (command)--this command is used for copy files or directoris from one server to another server securely  (https://www.youtube.com/watch?v=D_ROy24la5s)
+ssh(command) -- connecting to the servers 
+
+command : scp [options] [[user@]ip address or host1:]source_file_or_directory ... [[user@]ip address or host2:]destination
+
+Portnumbers:
+-----------
+ssh --22
+http-- 80 
+https -- 443
+smtp -- 25
+
+commands
+--------
+df -h(disk free) -- how many hard disks are assigned to server and how much space occupied a server 
+top(cpu utilization)-- for finding a cpu utilization
+free -h (ram usage) -- for finding ram usage
+
+onoremises servers : the servers which physically located in our organization
+cloud servers: is virtual servers which is located in somewhere 
+
+mail(command)--if we want to send the mail or rev=ceive mail or read mail we can use mail command
+smtp (simple mail transfer protocol) -- for sending mails
+pop3 : by using this command we can receive the mail
+
+--for sending mails in linux we can install SMTP server
+
+
+
+
+
+
+
+
