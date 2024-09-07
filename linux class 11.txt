@@ -1,0 +1,52 @@
+cal command:
+------------
+cal : for checking calender in linux command 
+cal -3 : for checking previous in linux command
+cal 2020 : this is for particular year
+cal 2025 : it will display future calender also
+
+--apt install wget url ---to download specific url or app 
+--dmidecode --- it give the RAM information type of RAM (SD RAM,D RAM ,SD,) speed, manifacture etc --. root user can access this coamand
+--tee -- it will display the content in console and store same output in file aalso 
+--wget-- is used for downlaod the packages 
+
+--apt upadte--is used to update the package 
+--apt install--is used to install the package
+--apt remove -- is used to delete the package 
+
+--curl-o /temp/tomcat.zip and url ---is used to download the softwares in specific paths 
+
+difference b/w wget and curl--is
+----------------------------------
+--wget command  can support limited protocals
+
+--curl command can support multiple protocals
+--and also curl commmand used to call apis (application programming interface)
+
+Script(command)--it is used to record the session which commands are useing and recorded output as well
+               -- if we need to come out from the script just enter ---exit amd script file will be created in current server typescript.txt 
+			   -- if we want to append the same script to exiting file command is (script -a script.txt) it will append the data.
+			   
+ping(command) -- it is used to connect the server from native server or linux server (by ping command it will continiously ping to the server)
+ping -c 5 --- it is trying to connect 5 times only after that it will disconnect
+
+telnet(command)-- it is used to check the port is enabled or not (once its connected want to come out (ctrl+c and exit)
+history(command)-- it is used to check the what are commands are used in from login onwards
+history -c (command)-- it will delete the history on particular user
+history > history.txt(command)-- it will store all the commands in history.txt file(bydefault it will store 1000 commands only)
+
+cat /etc/*release(command) --- is used to find a which flavour linux we can used 
+
+netstat -tualp       -- this port is used for checking which server is using any aprticular port number.
+
+date (command) -- it displays current date 
+watch date --- it will run the watch for every two seconds ( i need to run for every 5 secs)--- command is (watch -n 5 date) -- it will run for every 5 secs
+sudo shutdown-- to stop the server
+sudo shutdown -c -- to restart the server
+
+
+
+
+			   
+			   
+
