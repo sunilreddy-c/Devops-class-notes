@@ -1,0 +1,59 @@
+what is shell?
+ans.shell is program, it will take the commands what we typed and will gives to the OS to execute.
+    -- shell is an interface between user and OS
+
+in linux different shells is there -- (bash(bourne again shell)) is default shell in all advannces versions	
+                                       (sh) is default in older versions
+									   
+how to know which shell is supported to our linux server: for that that shell is located in ( cat /etc/shells)--it defines the which shell is supported		
+when execte above command its shows 
+/bin/sh
+/usr/bin/sh
+/bin/bash
+/usr/bin/bash
+/bin/rbash
+/usr/bin/rbash
+/usr/bin/dash
+/usr/bin/screen
+/usr/bin/tmux
+
+--if we want to  finding which shell is currently we are using --(echo $SHELL) (echo $0) (ps -p $$) by using three commands we can find
+
+--for change shell type --/bin/bash,/bin/csh,/bin/ksh,/bin/sh
+
+what is the shell scripting?
+---------------------------
+shell script is nothing but a simple file, which contains the series of commands, shell read this file abd carries out the commands as though they have been entered directly on the command line.
+
+
+                        (#!)-->shebang
+shell script start with (#!/bin/bash)-->it is shebang line---> by suing this line we can execute the bellow program lines.
+                        -- when we didnt write shebang line in the above program it will take by default (/bash)
+						--(./)--this comamnd will help to run the shell script file
+						
+why we need to learn shell script?
+---------------------------------
+--> to automate the regular jobs or tasks 
+--> for taking batabase backups
+--> for monitoring the several server resources for cpu utilization and memory utilization 
+
+how many ways we have to run the shell script
+---------------------------------------------
+./
+.
+bash
+sh
+csh and filenames 
+						
+
+
+
+
+
+
+
+
+
+
+						   
+	
