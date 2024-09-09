@@ -1,0 +1,102 @@
+command line arguments
+-----------------------
+--> while executeing the shell script passing the values is called as command line arguments
+--> during shell script execution, values passing through command prompt is called as command line arguments
+--> for example while running a shell script, wev can specify the command line arguments as "sh scriptfile.sh arg1 arg2 arg3"
+
+-->"sh scriptfile.sh arg1 arg2 arg3"
+-->$0 --> it displsy the shell scriptfile
+-->$1 --> it displsy the first arg1
+-->$2 --> it displsy the second arg2
+
+--> if we need to define the name as well we use "echo $0" command --it display script file also
+--> if the value is more than one we need to keep flower brackets {10}--then it will give 10th argument
+
+--> if we need to find how many arguments are passing for taht ---(echo $#)--it will give the how amny arguments are passing
+--> (echo $* and echo $@)---it will give all the  arguments names 
+
+
+--> differnce between $* and $@
+
+--> $*-- it will give all the args as one string
+--> $@-- it will give each arg as one string
+--> $$-- it will gives PID of current script
+--> $?-- it will gives the  previous CMD execution status--(if the execution is success it will give a 0 value and CMD is not correct it will give a 127 num
+--> $#-- it will give the how amny arguments are passing
+
+--> command line argument (example)--25:00 min start in 14th video
+
+operators--
+----------
+-eq --> == (equl to)
+-ne --> != (not equl to)
+-le --> <=  (less than or equal to)
+-lt --> <  (less than)
+-ge --> >= (greater than or equal to)
+-gt --> > (greater than)
+
+string:
+-------
+string is collection of set of characters (or) group of characters enclosed in a single or double quotes.
+name="sunil"--> here name is a string variable, and sunil is a assigned value
+role="devopsengineer"  -->here role is a string variable, and devopsengineer is a assigned value.
+
+string_var="my name is sunil, i worked in hcl , in hyd location"
+here string_var is variable name and "my name is sunil, i worked in hcl , in hyd location" is a assigned value to string_var
+--if we need to print that value in console command is 
+
+-->echo $string_var--it will print ( "my name is sunil, i worked in hcl , in hyd location") yhis value 
+-->echo ${string_var}--gives same output
+
+-->echo ${#string_var}--this command is used for how many characters are present in length of the string
+
+how to display sub string:
+---------------------------
+java installed or not script:
+----------------------------
+java -version
+
+if [ $? -eq 0 ]
+then
+echo "java is installed successfully"
+else
+echo "java is not installed"
+fi
+
+Arthamatic operations:
+----------------------
+we have lot of arthamatic operations 
++--> addition
+- --> substraction
+* --> multiplication
+/ --> divison
+% --> module
+
+--> if we want to execute the arthamatic operations we need to give command called (expr)
+--> this is script for arthamatics in command line arguments:
+
+
+echo " this is for add"
+expr $1 + $2
+echo "this is for sub"
+expr $1 - $2
+echo "this is for multiplication"
+expr $1 \* $2
+echo "this is for divison"
+expr $1 / $2
+echo "this is for module"
+expr $1 % $2
+
+normal script
+-------------
+expr 2 + 3
+
+expr 2 - 1
+expr 10 \* 10
+expr 10 / 2
+expr 20 % 3
+
+
+
+
+
