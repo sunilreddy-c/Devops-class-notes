@@ -1,0 +1,92 @@
+Debug mode---> if we need to find any errors in code or dcript in debug mode we can find it
+sh -x(command)  --> it will run in debug mode --- showing like command and output
+
+I want to execute the some particular lines in debug mode in shell scripting
+----------------------------------------------------------------------------
+set -x--> it will start the debug mode 
+set +x--> it will end the debug mode 
+
+file name conventions--
+-----------------------
+--file can be minimum 255 characters as a file name 
+--the name may contaion alphabates,digits,dots and underscores
+--file system is case sensitive
+
+comments--
+----------
+--comments are used to escape from the code
+--the part of code will be ignored by the program interepter
+--adding comment made things easy for the programmer, while editing the code in future
+
+
+there are two types of comments
+-->single line comment
+it represent #
+--> multi line comment
+it represent <<
+
+variables:
+----------
+its memory location, where we can store the data,files
+ 
+ two types of variables in shell script:
+ ---------------------------------------
+ --> system defined variables (shell variables)
+ --> user defined variables
+ 
+system defined variables: these values are craeted and maintained by system 
+
+how to check the system variables are assigned to server: command is (env,printenv)--by using this command we csn display the all system variables
+
+SSH_CONNECTION=49.43.203.23 62171 172.31.9.155 22
+LESSCLOSE=/usr/bin/lesspipe %s %s
+XDG_SESSION_CLASS=user
+TERM=xterm
+
+left side indicates a variables and right side indicates values
+
+-- if we want to display any specific system variable value --command is (echo $SHELL)
+
+-->differnce between pwd & PWD --> pwd is command and PWD is system variable
+
+--> by using (export) command we can change the default values (export HISTSIZE=200)
+
+-->system variables by default it is upper case values
+
+user defined variables:
+----------------------
+--> user defined values are always created with lower case
+--> no spaces between variable name and value 
+
+
+examples:
+a=10
+b=10
+c=10
+name=sunil
+
+echo $a
+echo $b
+echo $c
+echo $name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+user defined variables:
