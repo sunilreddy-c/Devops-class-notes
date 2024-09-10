@@ -1,0 +1,121 @@
+if else conditions
+------------------
+--> if i need to check the condition for two numbers which one is bigger
+example script of if & else condition 
+echo "if and else cindition demo"
+ a=100
+ b=200
+ 
+ if [ $a -gt $b ]
+ then
+ echo "$a is greater than $b"
+ else 
+ echo "$a is less than $b"
+ fi
+ 
+-->if i need to check the condition for three numbers which one is bigger
+--> if we need to add more than two conditions we can use [[]] inside that we can use [[(condition && condition)]]
+
+echo "elif cndition demo"
+a=10
+b=20
+c=30
+if [[ ( $a -gt $b ) && ( $a -gt $c ) ]]
+then 
+echo "$a is bigger than $b and $c"
+elif [[ ( $b -gt $a ) && ( $b -gt $c ) ]]
+then
+echo "$b is bigger than $a and $c "
+else 
+echo "$c is bigger than $a and $b" 
+fi
+
+-->write a shell script to get file name from the user and check wheather that file is existed or not in the current directory?
+script is:
+-----------
+echo "checking file present or not in the current directory"
+read filename
+if [ -f $filename ]
+then
+echo "filename is existed in the current directory"  $filename
+else 
+echo "file is not there" $filename
+fi
+
+-->write a shell script to get file name from the user and check wheather that file is existed or not in the current directory? if it is existed open the content of the file 
+   or if it is not existed create the file 
+script is
+---------
+   
+echo "checking file present or not in the current directory"
+read filename
+if [ -f $filename ]
+then
+echo "filename is existed in the current directory"  $filename
+echo "content of the file" $filename
+cat $filename 
+else 
+echo "file is not there" $filename
+echo "create the file" $filename
+touch $filename
+fi
+write a shell script to get the file name from the user and check wheather file is having read write and execute permissions for user not ? hint (-r,-w,-x)
+--> this is for write permissions
+script---
+----------
+echo "checking the file permissions"
+read filename
+if [ -r $filename ]
+then
+echo "file have write permissions"
+else
+echo "file dont have write permissions"
+fi
+
+another example:
+----------------
+echo -n "Enter the file name    :"
+read name
+if test -f $name
+      then
+              echo "Its is a file and it has "
+              if test -r $name
+                     then
+                           echo "Read permission "
+                      fi
+              if test -w $name
+                     then
+                           echo "Write permission "
+                      fi
+               if test -x $name
+                     then
+                           echo "Execute permission "
+                      fi
+else
+        echo "file doesnt have all the permissions" $name
+
+        fi
+
+for loop condition: 5th video 50:00 min
+
+-------------------
+for (( intilization ; condition; inc/dec ))
+do
+...
+....
+done
+
+intilization ---> intilization means creating variable and assign value to that varaiable example:a=10  ---here (a) is variable and (b) is value
+
+example: write a shell script to numbers from one to five ?
+
+echo "this script is forloop parctice"
+
+for (( a=1;a<=5;a++ ))
+do
+echo $a
+done
+
+echo "for loop demo is done "
+
+
