@@ -1,0 +1,74 @@
+user interaction using read command
+-----------------------------------
+this is script for read command
+--------------------------------
+echo "please enter your name"
+read name
+echo "the name which we have typed is:" $name
+echo "please enter devops tools"
+read devopstools
+echo "the tools which i have entered is:" $devopstools
+
+
+ using a array 
+ -------------
+--> to read the arrays we can use (read -a name) 0r (read -a devopstools)---this is the way we can use the arrays
+
+in devopstools i want to display only a some tools
+-----------------------------------------------------
+--> i mentioned a devopstools like git github tomcat maven nexus sonarcube aws i have given 
+--> in this input i want only partcular tools for taht command is (read - a devopstools)
+example scripr:
+--------------
+echo "please enter your name "
+read  name
+echo "entered name is " $name
+echo "please enter devopstools"
+read  devopstools
+echo "entered devopstools is:" $devopstools
+echo "tools i have filtered" ${devopstools[3]},${devopstools[7]}
+echo "tools which i have entered" ${devopstools[*]}
+
+-->if we dont want to give any (read) command and (array -a) commmand how we can print the message 
+--> for that we have one command is ($REPLY) --> it will print the msg
+
+for that example script is:
+---------------------------
+echo "type your fav food "
+read 
+echo "fav food which i have typed is " $REPLY
+
+i want to give input in the same line only fore that script is 
+-----------------------------------------------------------------
+read-p "plesae enter your username" username 
+read-p "please enter your password" password
+
+echo "my username is " $username 
+echo "my password is " $password
+
+-->i want to hide the password in above line for that command is (reas-sp)---it will compress the password
+-->i want encrypy the password for that echo -n password pipesymbol opensss base64
+
+-->   > & >>
+redircetion symbols:
+--------------------
+> --> redirect the std output 
+>>--> append the std output
+< --> std input
+
+file discriptors-
+-----------------
+0--> std i/p
+1--> std o/p
+2--> std err
+
+sh hello.sh > hello.txt 2>&1
+------------------------------
+this command is used for send errors and output into same file 
+
+sh hello.sh 2>error.log 1>output.log
+-------------------------------------
+this command is used for send errors to separate file and output to separate file
+
+
+
