@@ -1,0 +1,102 @@
+while loop and switch case conditions
+-------------------------------------
+for while body structure will be 
+--------------------------------
+initilisation
+
+while ( condition )
+do
+{ 
+----
+
+----
+inc/dec
+done
+
+echo "while loop demo starts"
+i=1
+
+while [ $i -le 5 ]
+do
+i=`expr $i + 1 `
+done 
+
+echo "while loop demo ends"
+
+
+switch case:
+-------------
+-->if we want to check the  condition multiplile timea rhen we can use the switch case
+-->switch case is the alternative for nested if else condition
+
+example shell script:
+---------------------
+
+echo "switch case demo starts"
+ case $1 in
+start) 
+echo "sonar.sh is starting"
+echo "sonar.sh is started"
+;;
+stop)
+echo "sonar.sh is stoping"
+echo "sonar.sh is stopped"
+;;
+restart)
+echo "sonar.sh is re-starting"
+echo "sonar.sh is re-started"
+;;
+*)
+echo "please give the correct argument"
+echo "sh $0 start,stop,restart"
+esac
+
+
+-->switch program for num 1 t0 5
+
+
+echo "switch case print 1 t0 5 num "
+
+read number 
+
+case $number in 
+
+1)
+echo "typed number is one "
+echo "typed number is correct"
+;;
+2)
+echo "typed number is two "
+echo "typed number is correct"
+;;
+3)
+echo "typed number is three "
+echo "typed number is correct"
+;;
+4)
+echo "typed number is four "
+echo "typed number is correct"
+;;
+5)
+echo "typed number is five "
+echo "typed number is correct"
+;;
+*)
+echo "enterd invalid number"
+
+esac
+
+functions:
+-----------
+
+we srite n no.of functions and we can call that functions in where ever we want
+
+echo "function demo starts"
+function ()
+{
+echo "my name is sunikl"
+echo "we are attending funtions"
+}
+
+echo "calling the function"
+function
