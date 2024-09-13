@@ -1,0 +1,51 @@
+git-1 admin class
+----------------
+remote-repository(repo)---place whhere store the code is called repository.
+local-repository-- in this repo developers where makes changes and push to remote-repository.
+
+--as a devops engineer--
+------------------------
+--craete an organization  
+--we are going to create the repository--
+--and create the team
+--add users to the team
+--provide repo access to the team
+
+create organization:
+----------------------
+this is the repo i have created and organization
+--------------------------------------------------
+https://github.com/sunil-devops-practice
+scm url / org url
+
+--in org we never create repos in our user account 
+--create only ina organization account
+
+--once we create a repo it will generate a two urls
+---------------------------------------------------
+--http url : https://github.com/sunil-devops-practice/flipkart.git--public url (in public we have read access)
+--ssh url  : git@github.com:sunil-devops-practice/flipkart.git-- public url (in public we have read access )
+
+--http url : https://github.com/sunil-devops-practice/amazon.git--private url (in private we dont have any access)
+--ssh url  : git@github.com:sunil-devops-practice/amazon.git --private url (in private we dont have any access)
+
+creating a team
+------------------
+
+this is team url --https://github.com/orgs/sunil-devops-practice/teams/flipkart-devteam
+this is team url --https://github.com/orgs/sunil-devops-practice/teams/amazom-devteam
+
+--add users to the team
+--------------------------
+
+
+
+
+
+
+
+
+
+
+
+
