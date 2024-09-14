@@ -1,0 +1,34 @@
+git bash commands--
+------------------
+
+git int : creating empty local repo
+--once it will create they will have multiple logical areas
+
+--working area                                                       staging area                                                                                                              local repo
+--------------                                                       -------------                                                                                                             -----------
+--files which are avalaible in the workijg area                      --once development is done i need to move that files to staging area                                                -- once code is commit to local repository 
+-- is called untracked files (it appear in the red colour)           --for that command is (git add.) it will move to staging area                                                       -- execute command like (git status) -- it will show the working tree is free 
+-- now give command (git status) no filews in there in working area  --in staging area what ever the files we have if we want to commit to local repo command is (git commit -m "")      --it means code is in local repo 
+                                                                     --befor commit the code                                                                                             -- the same code we need to share to remote repo
+                                                                     -- we need to configure the nsme and gmail                                                                          -- we need to map remote repository url to local repository 
+                                                                     --for that command is (git config --global user.name "FIRST_NAME LAST_NAME")                                        -- for that command is (git remote add amazon https://github.com/sunil-devops-practice/amazon.git) in this amazon is alisname
+	                                                                                       (git config --global user.email "MY_NAME@example.com" )                                       -- after that i want to know how many urls are mapped 
+	                                                                 -- for checking the name and email config or not (git config --global --list)                                       -- for that command is (git -remote -v)
+                                                                                                                                                                                         -- once configuration is done we push code to local to remote repository
+	                                                                                                                                                                                     -- for that command is (git push amazon master)             
+	
+	
+ -- because it moves to staging area, once files move to staging arae 
+      --that files will show in green colour                            
+these all are logical areas ; not able to see physically
+
+--developer are used IDES : intigrated development environments (for developing the codea)
+--
+
+
+--if i change any exiting file, that will come to working directory 
+--again we can add to staging araea and commit to local repo 
+--here for only exiting files we dont need to add staging area directly we commit to local repo command is (commit -a -m "commited")
+
+
+ 
