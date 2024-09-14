@@ -1,0 +1,63 @@
+git branch : it shows a how many branches are avaliable in the local repo
+
+git branch -r : it shows a how many branches are avaliable in the remote repo
+
+git branch -a : it shows a how many branches are avaliable in the local repo and remote repo
+
+update same file in both branches:
+----------------------------------
+--when we update same lines of code in the same file in different branches , we get an error called merge conflict 
+--if we want to resolve this issue manually open the code file and delete the unwanted code then we can use merge command (git merge dev)
+
+(git checkout -b stage) : this command is used for creating a new branch and checkout to that branch.
+
+(git push flipkart master stage dev) : this command is used to pudh all the changes to central repo and push all branches to central repo
+
+(git push flipkart --all) : it will push the all branches to the central repo (if we have lat of branches then we can use this command )
+
+(git branch -d uat) : it is used for to  delete the  branch -- it is used to delete in local repo
+
+(git push flipkart :uat) : it is used for to delete the branch in remote repository
+
+
+Tags
+-----
+difference between branch and tag:
+----------------------------------
+branch                                                                     tag
+------                                                                     -----
+--branch is mutable                                                       --tag is immutable means once its created we will not change it and edit it
+-- branch is going to craete in devlopment                                -- the tags are created after the production release 
+-- 																		  -- on which branch we are going to create the tag?
+																		  -- ANS : master branch
+																		  --(git tag tagname)---it is used for creating a tag in repo
+																		  --(git push aliasname --all)---this command is used to help push all tags from loacl repo to remote repository
+																		  --(git push aliasname tag tagname)--it will push one particular tag from local repo to remote repo
+																		  --this tags are created in prod env only 
+																		  --(git tag -d tagname)--this command is used to delete tsg in local repo
+																		  --it is not possible to delete tag in remote repo 
+
+git STASH
+----------
+--This will show you the changes you have made to your working directory.
+--To stash your changes, use the git stash command. This will save all the changes you have made to your working directory in a new stash entry. 
+--By default, Git will assign a name to the stash entry, such as stash@{0}, stash@{1}, and so on.
+
+git Stash list
+-------------
+-- this will store the data in local file like 
+-- stash@{0}
+--stash@{1}
+-- stash@{2}
+
+git stash apply
+---------------
+it will  take the file with latest one or recent one from locally
+if we want to get  any specific one (git stash apply stash@{0})
+
+git stash drop
+--------------
+if we want to delete the files in locally recent one 
+if we want to delete any specific one (git stash drop stash@{0})
+
+
