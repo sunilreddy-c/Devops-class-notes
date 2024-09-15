@@ -1,0 +1,92 @@
+gitcherry pick
+------------------
+repo--we have this is repository
+
+deviopmet
+----------
+--in development we commit multiple times and every time commit id will be created 
+--if i need to merge that code to dev branch to master branch, in dev branch there is multiple commits is there but i need only on commit to master branch 
+--here we use (git cherry-pick commitid) then we can merge the code with particular commit id into master branch that code will be merged to dev branch
+-- git cherrypick is used to merge the code from another branch to current branch with paarticular commitid 
+
+git clone remoterepourl :
+-------------------------
+(git clone httpurl or sshurl) : this git clone url is used to get the code from central repo to local system or laptop
+
+400 (series)
+-----------
+if we get any issue from 400 series that is issue from client side 
+
+500 (series)
+-------------
+if we get any issue from 500 series that is issue from internal server
+
+public repo
+------------
+by default we have read access and we dont have write acess
+
+private repo
+------------
+by default we dont have both read and write access
+
+git clone
+----------
+if we want all the code in particular branch we use git clone command 
+
+git pull aliasname branchname (or) git fetch aliasname branchname
+---------------------------------------------------------------------
+if we want updated code from the particular repo we use git pull command 
+
+git pull = git fetch + git merge
+--------------------------------
+differnce between git pull and git fetch
+----------------------------------------------
+
+git fetch= it will get code from the remote repo to central repo, again we can merge that code from local repo to working area
+
+git pull = git fetch + git merge
+----------------------------------
+it will pull the code from directly central repo to working area
+
+SSH Keys
+---------
+--it is used to create a password less communication between laptop to remote repository
+
+--command for generating keys (ssh-keygen) command
+---------------------------------------------------
+--we generate this keys in local gitbash 
+--give command ssh -keygen
+--it will generate two keys 
+--id_rsa --private key
+--id_rsa.pub --public key
+--by-default it will be store in (~/.ssh/)
+
+--we generate another ssh keys also
+-------------------------------------
+--give command ssh -keygen -t dsa
+--it will generate two keys
+--id_dsa  --private key
+--id_dsa.pub --public key
+--by-default it will be store in (~/.ssh/)
+
+--after creating keys we take content from the particular file and configure in the remote repo
+--once we configurations is done, we check its configurations correctly assigned or not in github
+--command is (ssh -T git@github.com)
+--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
