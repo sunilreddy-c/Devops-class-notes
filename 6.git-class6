@@ -1,0 +1,41 @@
+SSH-Key generation
+--------------------
+--first we  need to check ssh key is generated or not 
+--for that command is (ls -l ~/.shh/)
+--key is not genertated in particular folder
+--if we want to generate a key command is (ssh-keygen)--by using this command we can generate keys in laptop or linux server also
+--it will generate a key in default folder
+--id_939393--private key
+--id_848488.pub --public key
+
+we need to configure in github
+------------------------------
+--for that after generating key we can open that file and copy that content and generate a ssh key in a hit hub (cat ~/.shh/id_jsjs.pub) to open that file
+
+how to check what are the confugurations setup for github
+---------------------------------------------------------
+--for that we can use command called (ssh -T git@github.com)--while we give this command it will generate (know_hosts) in (~/.ssh/) location
+--(ssh -T git@github.com)-- again i give the command it will successfully connected to the github by using ssh key
+
+--i give command (git remote -v)---it will provide only a hhtp configuration
+--i need to configure ssh configurstions also  
+--for that command is (git remote add surl git@github.com:sunil-devops-practice/flipkart.git)--project url)
+
+--again give command called (remote -v)---it will show the ssh url also
+
+Pull request
+------------
+--if we want to integrate a code from one branch to anothet branch we can use merge command
+--if we want to integrate a code from one branch to another branch dircetly in the  remote repo we can create  a pull request.
+
+Fork
+----
+--it will fork the applications from one user repo to another repo user
+
+Git hub API
+-----------
+--it is used to automate the all things in github like (repos ,branching ,mergeing)
+curl --curl command is used to downlaod the info and calling the apis
+
+
+
