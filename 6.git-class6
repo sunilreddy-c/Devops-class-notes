@@ -37,5 +37,27 @@ Git hub API
 --it is used to automate the all things in github like (repos ,branching ,mergeing)
 curl --curl command is used to downlaod the info and calling the apis
 
+git branching strateg
+------------------------
+
+
+
+git merge
+---------; it commmits the code from one branch to anothr branch 
+---examle -we have 10 commits in development branch we need to merge that code to master branch
+          --for that swutch to master branch and apply command called --master (git merge devlopment) --it will commits the code to master branch with single objectID 
+
+same we can use git rebase
+---------------------------
+--we have 10 commits in development branch we need to merge that code to master branch
+--for that swutch to master branch and apply command called --master (git merge devlopment)
+--it will commit the code and to master with not single object id , it will commit the code all different commit ids 
+--it is very easy to identify the which developer make changes 
+
+Readme file
+------------
+need to add some files
+
+
 
 
