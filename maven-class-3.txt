@@ -1,0 +1,95 @@
+installing git in linux server and prerequisties
+------------------------------------------------
+##Login as a root user
+sudo su -
+
+##Change dir to /opt
+cd /opt
+##The below command will download and install all required development libraries to your system.
+
+yum groupinstall "Development Tools" -y
+
+yum install gettext-devel openssl-devel perl-CPAN perl-devel zlib-devel curl-devel -y
+yum install wget tar -y
+
+##Open below URL and select the specific version and right click on that and click on Copy Link ##Address, then execute the wget command.
+##https://github.com/git/git/releases
+
+wget https://github.com/git/git/archive/v2.18.0.tar.gz -O git-bash.tar.gz
+tar -zxf git-bash.tar.gz
+
+cd git-2.18.0
+make configure
+./configure --prefix=/usr/local
+##make install command will copy the built program, and its libraries and documentation, to the correct locations.
+make install
+
+git --version
+
+git config --global user.name "Mithun Technologies"
+git config --global user.email "devopstrainingblr@gmail.com"
+git config --list
+
+--now i am able to clone the code from outside git repo to inside 
+--git clone and url
+
+--i need to package a project
+--------------------------------
+--(mvn package)
+------------------
+--for that command is (mvn package) package is a goal
+--in first step code will be failed because, there is no pom.xml file in the project code 
+--go to inside project code , inside there is a (pom.xml) file and (src) file are present --this file is called source code file
+--give command called (tree - src) it will display the tree structure of src file
+--and it will contain a two main branches 1.main --it contain a main source code 
+                                          2.test --it contain a jtest files
+
+--when we give command (mvn package) --first it will check in a maven local repoo (~/.m2 repository) the required files are not avaliuable then it will check in central repository
+--by using this command what are the files avaliable in the directory (ls -l ~/.m2/repository/)--if it will shows a empty files 
+--then we go to a under project file there is a (pom.xml) amd (src) files is there then we give command (mvn package)
+--now it will get all the dependencies from central repo to local repo
+--and i got msg like "build success"
+--now the target file is create in the under project location--all build files are mapped to target file 
+--now give command called (mvn package) now all the dependencies have been created in local also
+
+--(mvn clean)
+--------------
+--now we gave command called (mvn clean)--it will delete the build files
+--entire target directory going to be deleted
+
+--(mvn clean package -DskipTests)--it will skip the test cases for project and and create compile unit test case files in a target file 
+								 --we dont wnat to compile a test cases in a  target folder for that we have one command 
+--(mvn clean package -Dmaven.test.skip=true) --this command skip the test cases and wont create a compile unit test cases files in a target file
+
+--hoe to use (maven local custom repository) instead of default path?
+------------------------------------------------------------------------
+we need to update the path in maven home directoty-->config-->settings.xml in this file we update that file 
+--we need to open a (vi settings.xml)---file will open then 
+--we need to update 53th( <localRepository>/path/to/local/repo</localRepository>) line on the place of existing line (<localRepository>/root/mavencustomlocalrepo/</localRepository>)
+--and update the file
+--before updating that create directory in (~/) mkdir mavencustomlocalrepo--make that configurations in a settings.xml file 
+
+--(mvn install)
+---------------
+--it will store the packages into maven local repository
+
+-->how we can download the web applications and what is the package is used for web application?
+-------------------------------------------------------------------------------------------------------
+--we are using war file for web application (war)
+--for downloading code into linux server command is (git clone https://github.com/MithunTechnologiesDevOps/maven-web-application.git)--git clone url
+
+--in all the source code there is a common pom.xml file is there 
+--we provide a custom name to that pom.xml?
+--yes it will happen for using command called -->(mvn clean package -f sunil.xml)
+
+--enterprise application
+--------------------------
+--we are using ear file for enterprise application
+--for downloading code into linux server command is (git clone https://github.com/MithunTechnologiesDevOps/maven-web-application.git)--git clone url
+--enterprise applications contains a modules applications
+--each module contain a indivudual pom.xml files
+--if there is a lot modules in the enterprise application, i need to oackage a particular modules for that 
+--(mvn clean package -pl modulename)
+--
+					 
+										  
