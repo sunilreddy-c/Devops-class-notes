@@ -1,0 +1,111 @@
+Apache Maven
+------------
+
+--maven is an open source, java based build tool
+--maven is going to work for java applications
+
+what is build?
+--build is nothinh but procees of automatically  creating the  packages for our source code
+
+--in java we have differenet applications is there
+----------------------------------------------------
+standalone applications-- jar files (java archive)
+-----------------------------------------------------
+--it contains java code 
+--in jar files contains  all .class files
+
+
+web applications -- war files (web archive)
+--------------------------------------------
+--java code + web content (html/css/js/xml/images)
+--war files contain (jar files + web content)
+
+ 
+enterprise applications --ear files (ear archive)
+-------------------------------------------------
+--java code + web content 
+--war files contains == (jar files + war files)
+--and contain some modules is there (web modules and stand alone modules)
+--login
+--admin
+--users
+--reports
+--ear is the bigger service packages among all the one 
+
+
+Maven-directory-structure
+--------------------------
+
+--once download latest version of maven and we can extract that file 
+--we can able  to see some files
+--bin:
+  mvn command 
+  
+--config:
+  in this file contain one imp file that is settings.xml file
+  
+--lib:
+  jar files and library files
+  
+--boot:
+  
+
+Maven installation-prerequatise
+--------------------------
+-java is the pre-requatise
+-we have types in java
+
+-jdk--java development kit
+
+-jre--java runtime environment
+
+for maven installation-prerequatise
+------------------------------------
+Install Maven Build Tool in Linux Server/ Set Class path for Maven Build Tool in Linux Server
+-------------------------------------------------------------------------------------------------------------------------
+
+Pre Requisite Software
+-----------------------------
+Java (JDK) is the Pre - Requisite Software for Maven.
+
+javac -version
+
+Install Maven
+------------------
+Step1) Login as a root user and change the directory to /opt/
+
+sudo su -
+cd /opt/
+yum install wget unzip -y
+
+Step2) Download the Maven Software
+
+wget https://dlcdn.apache.org/maven/maven-3/3.9.5/binaries/apache-maven-3.9.5-bin.zip
+unzip apache-maven-3.9.5-bin.zip
+
+Step3) Set the class path/Environmental Variable
+
+For Specific User
+----------------------
+vi ~/.bash_profile
+
+export M2_HOME=/opt/apache-maven-3.9.5
+
+export PATH=$PATH:$M2_HOME/bin
+
+source ~/.bash_profile
+
+For All Users
+---------------------- 
+vi /etc/profile
+export M2_HOME=/apache-maven-3.9.5
+export PATH=$PATH:$M2_HOME/bin
+
+source /etc/profile
+
+Step4) Check the Maven version
+
+mvn -version
+
+
+
