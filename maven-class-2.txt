@@ -1,0 +1,94 @@
+sample content in the pom.xml
+------------------------------
+maven --pom.xml
+ant -- build.xml
+gradle--build.gradle --these are the default files contaion in the tools 
+
+interview question
+------------------
+---what is the default script file is avaliable in the maven ---pom.xml 
+---if we want we give custom name also (flipkart.xml)
+
+this link is used to search anything about maven--
+--------------------------------------------------
+https://mvnrepository.com/repos/central
+
+--if we want that dependencies we use that dependencies easily
+--in the maven repository
+
+--(mvn package)---this command is used for package the source code 
+----------------------------------------------------------------------
+it will take source code from three palces 
+1)maven local repo
+------------------
+--it is a folder in our local laptop/desktop/server..it will create when we did the first time build
+--and it will create one repository in local home directory (~/.m2/repository)
+
+--windows directory
+--------------------
+--in windows it will create default folder
+--C:\Users\LENOVO\.m2\repository
+
+--in linux
+---------
+--in linux it will create in a 
+--/linux/sunil/.m2/repository
+
+what is the maven local repository default path is ?
+
+-- ~/.m2/repository
+
+--if we have downlaod one maven by using one user called sunil 
+--by default it will create one .m2 file in this location (/linux/sunil/.m2/repository)
+
+--if we have downlaod one maven by using one user called anil
+--by default it will create one .m2 file in this location (/linux/anil/.m2/repository)
+
+--if we download a mutliple mavens using mutliple users, it will create no.of .m2 files 
+--the useage will be increased, 
+--for that we can craete one custom path for all the user in (/config) location under (settings.xml) file 
+--<localRepository> here kepp the custom path</localRepository>
+--
+
+2)maven central repo
+--------------------
+--the central repository is the repository provided by the community.
+--it contails a large repository of commonly used libraries
+--the repository comes into play when maven does not find the libraries in the local repository
+
+--each developer will have only one local repository
+
+3)maven remote repo
+---------------------
+--enterprises usually maintain their own repositoryies for the libraries that are being used for the project
+--this differ from the local repository , a repository is maintained on a separate server, different from the developers machines and is accesible with in the organization
+
+mvn package :(here mvn is a command and package is a command )
+
+mvn clean
+
+mvn test
+
+Maven life cycle
+------------------
+life cycle                                                                Goals
+----------                                                         -----------------
+clean                                                                   clean: it will deletes the previous build files 
+site                                                                    site: it wll creates the documentation for the source code
+
+default                                                                 validate:it will check project dirctory structure and resource file
+                                                                        compile:it will compile source code and junit test cases code 
+																		test:it will run the junit test cases
+																		package:it will create the packages / build artifacts 
+																		install:it will store the  build artifacts into maven local repo
+																		deploy:it will store the build artifacts into remote repo
+																		
+																		interiew question: differnece b/w install gaol and deoploy goal?
+																		------------------------------------------------------------------
+																		
+																		above all goals is important 
+																		if we want to skip any goal, the only option is test goal apart test goal we dont have option to skip remaing goals
+														                command is ( mvn clean package -DskipTests)
+																		
+														
+																		
