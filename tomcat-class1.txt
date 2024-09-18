@@ -1,0 +1,131 @@
+tomcat
+-------
+1.we build the applications by using maven build tool -jar,war,ear files
+2.we build the packages by using source code 
+3.now we need to run that applications, for jar files we have command by using that command we can run (java -jar jarfilename)
+4.we need to run war and ear files also for that required servers
+
+--tomcat (tomcat is an open source tool,java based, web application server)
+-----------
+---any of the application servers are deployed in the tomcat only 
+---java application servers
+---amd web logic servers
+---by using tomcat server we deploy only  web applications (war files)
+
+--jboss/wildfly
+----------------
+--these tools are used for only deploy the (war) and (ear) files also --enterprise application servers and web application servers
+
+
+Tomcat directory structure
+---------------------------
+--once we download the tomcat application --after unzip there will be contain a 
+--bin-- bin directory contains binary files 
+--startup.sh--> this command is used to start the tomacat server in (MAC and linux)
+--startup.bat--> this command is used to stsrt the tomcat server in windows
+
+--shutdown.sh--> this command is used to stop the tomacat server in (MAC and linux)
+--shutdown.sh--> this command is used to stop the tomacat server in (MAC and linux)
+
+--catalina.sh start --> these are the shell scripts by using this shell scripts we can start and stop tomcat server in (MAC and linux)
+--catalina.bat--> these are the shell scripts by using this shell scripts we can start and stop tomcat server in (windows)
+
+--conf--conf directory contains configuration files 
+--severs.xml
+--tomcat-users.xml
+
+--lib--lob directory contains libraries files
+--jar files 
+
+--logs--logs directory contains log files (by default its empty folder)
+--once the files runs it will generate below files 
+--catalina.out
+--manager.log
+--hostmanager.log
+--localhost.log
+
+--webapps- webapps directory contains web applications 
+--what are the applications which we are going to deploy, those applications are stored in webapps directory (flipkart.web)
+--while running the applications it will crate some files in work directory
+
+--work--
+--filpkart
+--by using the directory  deployed web applications are running
+
+--temp-- temp directory contains temparory files
+
+tomcat installation
+--------------------
+
+pre-requtises are 
+--we need to install java l.8 version--beacuse tomcat supports only java 
+#Login as a root user
+sudo su -
+
+yum install wget unzip -y
+
+cd /opt
+wget https://dlcdn.apache.org/tomcat/tomcat-9/v9.0.95/bin/apache-tomcat-9.0.95.zip
+unzip apache-tomcat-9.0.94.zip
+cd /opt/apache-tomcat-9.0.94/bin
+chmod u+x *.sh
+
+ln -s /opt/apache-tomcat-9.0.94/bin/startup.sh /usr/bin/startTomcat
+ln -s /opt/apache-tomcat-9.0.94/bin/shutdown.sh /usr/bin/stopTomcat
+#ps -fax | grep tomcat
+#netstat -tunlap
+#vi /opt/apache-tomcat-9.0.65/webapps/manager/META-INF/context.xml
+#Comment the below lines
+#<!-- <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+# allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> -->
+startTomcat
+#stopTomcat
+ 
+#Create a user
+#vi /opt/apache-tomcat-9.0.44/conf/tomcat-users.xml
+
+once installation is done
+--------------------------
+--if we need to start the tomcat server we need to go to tomcat server (bin) folder  and start the server (sh startup.sh)
+--instead of coming to bin directory from any where i can start the tomcat server
+--for that we need  create a soft links for both start and stop tomcat in (/usr_bin directory)
+--once we created soft links for both start snd stop, we can login any where from the server 
+--command is (startTomcat)--for starting tomcat
+             (stopTomcat)---for stopping tomcat
+--if we want to know process id for tomcat server command is (ps -ef | grep Tomcat)
+--its display the process id
+
+--How to access tomcat server
+-------------------------------
+
+--go to the running server and copy public ip address (http://publicipaddress:8080)--8080 is default port number for tomcat/jenkins/jnboss/wildfly
+--we are trying to open that link in browser  that will not open because --that port entery is not opened in a server
+
+--how to open a port in server in linux server--port is nothing but entery point in the server
+
+--need to to go server --goes to security tab--click on security rules--and click on (edit inbound rules) that will in the left side corner	--click on (add rule)--inside select (AllTcp) and ipv4 anywhere and saverules
+
+--once adding rules now we can trying to access the link (http://publicipaddress:8080)--it will open the tomcat page in outside the server
+--once app is open if we need to deploy any web application we need to click on (manager app)
+--while try to open that manager app it gives error called (403 access denied)
+--because tocat server is running in linux server --we are trying to open in a outside server 
+--for that we need to edit the file which avaliale in (webapps) directory--this directory avaliale in apacahefile
+--in (webapps) directory--we have one directory called manage --inside that we have one directory (META-INF)--inside that we have one file (context.file)
+--we need to edit that file --inside that comment this lines <!-- 
+                                                                <Valve className="org.apache.catalina.valves.RemoteAddrValve"
+                                                                allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" /> 
+																--> like this 
+--for Host manager 
+--------------------
+--need to fallow above process												
+				
+fir creating user in tomcat
+------------------------------																
+--now we are going to try access now it will work and, and asking username and access
+--for that we need to (conf) directory --inside that we have (tomcat users.xml) file 
+--open in (vi tomcat users.xml)
+--in the last we need to update one entery 
+--<user username="sunil" password="Ayyaappa006" roles="manager-gui,admin-gui" />
+-- password:Ayyaappa006
+																												
+
