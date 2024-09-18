@@ -1,0 +1,54 @@
+for changeing port number
+-------------------------
+--for maven/tomact/jboss/wildfly--for all the servers default port number is 8080
+--if we install all the servers in a linux server the default port 8080 is not workong for all the servers
+--by using (netstat) command we can check which server using a which port number
+
+--we need to change the default port number to servers
+--we use servers.xml that will present in the (conf) directory
+--open the (server.xml)
+--and change the port number
+--in line number 71 change port number what ever we want 
+--0 to 1023 --the ports are reserved
+--1024 to 65535 --are range ports 
+
+
+--if we need to check the logs 
+-----------------------------
+--then we will check in logs directory 
+--in installed apache one 
+
+Deploy the application in tomact
+--------------------------------
+--tomcat supports only a war files only 
+--deploy application picking it from the local
+--for that we need to take that file from linux server 
+--take war file from linux server to local and then pick it from local to tomcat server
+--once its deploy we got msg like =ok
+--how to access that war file 
+--after deploying a war file in the tomcat
+--its create own or uniqe context path 
+--by default context path is (war file name only)
+--http://hostname:8081/war file name 
+--http://13.232.192.226:8081/Lab6A/
+--i need to stop that application deployed application
+--for that we have to click stop button on the same row
+--for hot fix changes we can click on (reload)
+--for undeploy application click on (undeploy)
+
+same application we can deploy in two diferent context path
+-----------------------------------------------------------
+-we can deploy trhe application in different ways 
+
+web servers
+-----------
+-websrvers are used for deploy static content only (HTML,CSS,JS,Images) only
+-web servers are used for load balancing purpose also
+
+
+App servers
+------------
+--are used to deploy (war and ear)--
+ 
+
+
