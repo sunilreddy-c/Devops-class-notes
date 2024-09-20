@@ -1,0 +1,138 @@
+why we use sonarqube
+--------------------
+--code reveiw
+--continuous code quality
+--sonarqube is an open source software quality management tool 
+--it will continiously analyze and measures quality of the source code 
+--it will generate the report if any issue in html fornat and PDF format
+--it is a web based tool supports multiple languages (Java,cs,C++)
+--it will support multi OS platform (windows,MAC,Linux)
+--it will supports multiple databases (Oracle,MYsql,postgre sql,MS Sql server)
+--it will supports multiple browsers (microsoftedge,chrome,safari,FF)
+--it will supports the below category of issues
+        Duplicate code 
+		coding standrads 
+		unit tests
+		complex codes
+		comments
+		potential bugs
+		architecture and design
+		
+Maven/tomcat/Jboss/wildfly--build by java ---supports only for java languages 
+sonarqube/nexus/jenkins/---build by java --supports multiple languages
+
+what is the difference between RDMs and no sql databases?
+-------------------------------------------------------------
+relational Database management sustems
+
+--oracle
+--mysql
+--ms sql server
+--postgre sql
+--db2
+--in this databases data store in structure format (rows and columns)	
+
+no sql databases
+-----------------
+Mongo DB
+Cassandra
+Cloudant
+--in this data stored in unstructered format
+--here data is stored in the documents in json format
+
+--by default sonarqube will use internal database that is (H2 -Database)
+--any code quality or standrads are missing in a source code, it will prepare a (html format code or pdf format code)
+--that files are stored in a h2-database 
+
+--sonarqube Architecture
+-------------------------
+please chceck in online
+
+
+installation pre-requitises
+------------------------------
+--java installation
+--for sonarqube we need 4gb data required
+
+sonar-qube installation
+--------------------------
+#Hardware Requirements for SonarQube
+#----------------------------------------------------
+#The SonarQube server requires at least 2GB of RAM to run efficiently and 1GB of free RAM for the OS.
+
+#Login as a root user.
+sudo su -
+ 
+Install Java ( Java is the Pre Requisite Software)
+--------------------------------------------------------------
+yum install java-11-openjdk-devel -y
+
+#Download the SonarqQube Server software.
+cd /opt
+yum install wget unzip -y
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.6.1.59531.zip
+
+unzip sonarqube-9.6.1.59531.zip
+mv sonarqube-9.6.1.59531 sonarqube
+
+
+#As a good security practice, SonarQuber Server is not advised to run sonar service as a root user, so create a new user called sonar user  and grant sudo access to manage nexus services as follows.
+useradd sonar
+
+Give the sudo access to sonar user
+visudo
+
+sonar   ALL=(ALL)       NOPASSWD: ALL
+control+o--save and click enter and click on x
+
+Change the owner and group permissions to /opt/sonarqube/ directory.
+chown -R sonar:sonar /opt/sonarqube-9.6/
+chmod -R 775 /opt/sonarqube-9.6/
+su - sonar
+cd /opt/sonarqube/bin/linux-x86-64/
+
+./sonar.sh start
+
+Troubleshooting
+--------------------
+
+sonar service is not starting?
+
+a)make sure you need to change the ownership and group to /opt/sonarqube/ directory for sonar user.
+b)make sure you are trying to start sonar service with sonar user.
+c)check java is installed or not using java -version command.
+
+Unable to access SonarQube server URL in browser?
+
+a)make sure port 9000 is opened in security groups - AWS ec2 instance.
+
+Create SonarQube server as a sonar service
+--------------------------------------------------------
+
+ln /opt/sonarqube/bin/linux-x86-64/sonar.sh /etc/init.d/sonar
+
+vi /etc/init.d/sonar
+
+#add below lines in /etc/init.d/sonar
+
+SONAR_HOME=/opt/sonarqube
+PLATFORM=linux-x86-64
+
+WRAPPER_CMD="${SONAR_HOME}/bin/${PLATFORM}/wrapper"
+WRAPPER_CONF="${SONAR_HOME}/conf/wrapper.conf"
+PIDDIR="/opt/sonarqube/"
+
+#Enable the sonar service
+sudo systemctl enable sonar
+
+#Start the sonar service
+sudo systemctl start sonar
+
+#Check the status of the  sonar service
+sudo systemctl status sonar
+
+
+
+
+
+
