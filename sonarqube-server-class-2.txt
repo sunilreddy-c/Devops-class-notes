@@ -1,0 +1,37 @@
+---after successfully installed sonaqube in server--31st video need to practice
+---i want to test soanrqube for the java applications that are present in the maven server
+---my sonarqube was avaliable in the another server is called sonarqube server
+---now we can connect to maven server and execute a command called 
+---mvn clean sonar:sonar--first sonar represent that (plugin name ) and second sonar represent that (goal name)
+---if we want to run that command in maven --we need to confihure the (sonarqube url) and (user) and (password) details in  maven server
+---for which application we are going need to test sonarqube for that application inside (pom.xml) file we need to configure the sonarqube url and credentials 
+---
+
+instead of providing credentials we can give token also
+---------------------------------------------------------
+--we can generate a token in a sonarqube (admin part) and copy that token and add in the pom.xml ---in which application we want to generate a report
+
+--like that we can generate a sonarqube reports for all
+--war applications
+--jar applications
+--ear applications
+
+--in ear application we have differnet modules is there in which application means which pom.xml file we need to find a token
+--in parent pom.xml file we can update a token or credentials
+
+
+--if we want to  generate a sonarqube report for node.js projeect 
+--for that we want to configure a (sonar.node-js )in this file we need to configure a sonarqube http url and credebtials or token 
+--if we need to generate a report we want to give command called (mvn sonar:sonar) in maven server or where the project are downloaded directory
+
+installing node.js in linux
+------------------------------
+--if we run the node.js project for that (npn sonar.js)
+--before running this node.js project we need to install (nodejs -y)
+--for that install (apt install node.js)
+--for checking version of nodejs or npm
+--node -v or npm -version -
+
+
+
+
