@@ -1,0 +1,98 @@
+Nexus or sonartype nexus
+-------------------------
+-- it is used to store artifactory repositories  (artifactory repo tool)
+
+--sonartype nexus --sonartype is a company name nexus is a tool
+--jfrog artifactory--jfrog is a company name nexus is a tool
+
+--Sonartype nexus--is a open source ,java based artifactory repository
+                   --it can be used to store the build artifcats and retrive the build artifacts
+				   
+it will store the all build artifacts like 
+-------------------------------------------
+java --jar/war/ear
+node.js--tar
+docker--docker images
+
+--in nexus we have different editions 
+--------------------------------------
+Nexus OSS --open source software
+Nexus Pro -- paid version
+Nexus default port number is --8081--if we want to change default port number number --installation location (opt/bin/conf/nexus-default.properties)
+
+difference b/w github and nexus?
+--------------------------------
+github --is source code management tool where we can manage the sourcr code 
+nexus -- is a artifactory repo tool, it can used to manage the build artifacts
+
+
+nexus installation pre requatise
+--------------------------------
+
+Login as a root user
+sudo su -
+cd /opt
+yum install tar wget -y
+wget http://download.sonatype.com/nexus/3/nexus-3.15.2-01-unix.tar.gz
+tar -zxvf nexus-3.15.2-01-unix.tar.gz
+mv /opt/nexus-3.15.2-01 /opt/nexus
+
+#As a good security practice, Nexus is not advised to run nexus service as a root user, so create a new user called nexus and grant sudo access to manage nexus services as follows.
+ 
+useradd nexus
+
+#Give the sudo access to nexus user
+
+visudo
+nexus ALL=(ALL) NOPASSWD: ALL
+
+#Change the owner and group permissions to /opt/nexus and /opt/sonatype-work directories.
+
+chown -R nexus:nexus /opt/nexus
+chown -R nexus:nexus /opt/sonatype-work
+chmod -R 775 /opt/nexus
+chmod -R 775 /opt/sonatype-work
+
+#Open /opt/nexus/bin/nexus.rc file and  uncomment run_as_user parameter and set as nexus user.
+
+vi /opt/nexus/bin/nexus.rc
+run_as_user="nexus"
+
+#Create nexus as a service
+
+ln -s /opt/nexus/bin/nexus /etc/init.d/nexus
+
+#Switch as a nexus user and start the nexus service as follows.
+
+sudo su - nexus
+
+#Enable the nexus services
+sudo systemctl enable nexus
+
+#Start the nexus service
+sudo systemctl start nexus
+
+#Access the Nexus server from Laptop/Desktop browser.
+ 
+http://IPAddess/Hostname:8081/
+
+#Default Credentials
+User Name:
+Password:
+
+Troubleshooting
+---------------------
+nexus service is not starting?
+
+a)make sure need to change the ownership and group to /opt/nexus and /opt/sonatype-work directories and permissions (775) for nexus user.
+b)make sure you are trying to start nexus service with nexus user.
+c)check java is installed or not using java -version command.
+d) check the nexus.log file which is availabe in  /opt/sonatype-work/nexus3/log  directory.
+
+Unable to access nexus URL?
+-------------------------------------
+a)make sure port 8081 is opened in security groups in AWS ec2 instance.
+
+
+
+
