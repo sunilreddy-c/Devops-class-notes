@@ -1,0 +1,81 @@
+I dont want to trigger job manually
+-----------------------------------
+--automatically we can deploy the code in all tools 
+--when the developer push the code to github
+--it has three ways for that 
+
+--Poll SCM
+--Build Peridically
+--github webhook
+
+--by using above any of the process we can set automatically push the code 
+
+Poll SCM
+--------------
+--started by an SCM change
+--for that go through the (configue) --(build triggers) and select what ever we want , i selected a (Poll SCM)
+--in that we can give a cron expression for testing purpose 
+--for every one minute it is going to check the github and is there any updated code isn there, it eill trigger the poll scm
+--on the basis of latest commit id 
+--if commit id changes in the git hub, build trigger automatically with help of poll SCM
+
+Build periadically
+-------------------
+--Started by timer
+--for that go through the (configue) --(build triggers) and select what ever we want , i selected a (build perodically)
+--in that we can give a cron expression for testing purpose 
+--in this jenkins is not going to check the code in github, what ever it may be code is updated or not it will trigger every minute 
+--in these time code will update it will automatically trigger 
+--or not update it will trigger the code with latest commit id only
+--
+
+github webhook
+---------------
+--Started by GitHub push by sunilreddy-c
+--this is used for when ever the developer updated the code and commit to repository (hit hub)
+--automatically git hub intimated to jenkins there is updated code in the github
+--automatically jenkins take the code and build the code .
+--for that we need to go (git hub)--repository and --settings--we need to provide jenkins url --in the weebhook payloadurl(http://13.127.84.239:8080/github-webhook/)
+--content type (application/json)
+--while triggering a web-hook we need admin access for that repository
+
+I need to delete old builds and maintain only a last 5 builds (Discard OLD Builds)
+----------------------------------------------------------------------------------
+
+--if we maintain a all builds the disk usage will be increased
+--all server perfomance will be decreased
+--in configure tab --in general--we are selecting a (discard old builds)
+--and we have options called 
+1.
+--Days to keep builds
+if not empty, build records are only kept up to this number of days
+2.
+Max # of builds to keep
+if not empty, only up to this number of build records are kept
+in advanced section
+----------------------
+1.
+--Days to keep artifacts
+if not empty, artifacts from builds older than this number of days will be deleted, but the logs, history, reports, etc for the build will be kept
+2.
+Max # of builds to keep with artifacts
+if not empty, only up to this number of builds have their artifacts retained
+
+Disable this project
+----------------------
+--we have one option in right side , in that we have disable project
+--we can click on that the project will be disabled
+--disable this option we are used in when servers are outage
+--
+
+--Delete workspace before build starts
+---------------------------------------
+--go to project and --(click on configure )--(under build-environment)--we have option called--(Delete workspace before build starts)--we need to enable that one  --click on save
+ 
+--Add time stamp to the console output
+--------------------------------------
+--go to project and --(click on configure )--(under build-environment)--we have option called--(Add time stamp to the console output)--we need to enable that one --click on save
+
+(JACOCO-Plugin)---Java code coverage
+---------------------------------------
+--jaccoco generating the junit reports
