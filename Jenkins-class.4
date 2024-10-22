@@ -1,0 +1,73 @@
+FOR slack notification
+------------------------
+--build is over either it is success or failure
+--i nedd to send a slack notification to a developer
+--once we create a account in slack, we need to create a one channel in the slack
+--after that we need to go under id and under that --select (tools settings)--select-- (manage apps)
+--in that we search as (jenkins)--and click on add jenkins 
+--once its added, then we can give channel name in the dropdown
+--and install plugin in a jenkins (slack notification)
+--
+
+--Directory structure
+----------------------
+jobs-directory
+--------------
+--default home directory for jenkins--var/lib/jenkins
+--under here one jobs directory is there (jobs)--its contain the all jobs info where we created in a jenkins
+--like--prctice-web,practice-web2
+--practice web--under practice web we have --(jobs)--folder inside that have all the jobs information--inside that file have -(log)-inside that have console output
+--like that each file build  have log file
+--and contains one more directory called (next build number)--that is contaion next build number --if the last build number is 26--next bild number is 27
+
+--WorkSpace directory--contains a project releated source code
+-----------
+--in this directory contain all the source code info of all jobs
+--for each job they were create a two directories (practice.web and practice.web@tmp)
+--practice.wb contain a source code info
+--practice-web2@tmp contain a empty
+
+--Tools directory
+------------------
+--what are the softwares we are installed in a server 
+--that softwares info will be stored in a tools directory
+--
+Plugins
+------
+--what ever the plugins we have installed that plugins info will be stored in a plugins directory
+
+Users directory
+---------------
+---user directory contain users information
+---users info stored in a users.xml file
+
+CI-CD for Maven java Project by using maven project
+----------------------------------------------------
+--by default maven project will not be avaliable 
+--we need to download the plugin in jenkins
+--go to manage jenkins and--manage plugins --and there we can search on avaliable plugin
+--there we can download
+--now we are able to see in a under freestyle project, maveb project will be avaliable
+--free style projrct will be used for any languages
+--by using maven project --we can build only java based project
+
+Plugin management
+----------------------
+--what are the plugins we have installed and what purpose we have installed
+
+--Deploy to container
+----------------------
+--it is used to deply the container in tomcat or jboss
+
+--systemctl restart--for jenkins restart
+--by using a full link/ restart
+--by using a full link/safe restart
+--the above one also work
+--difference between restart and safe restart
+--
+
+onboardingqueries.in@capgemini.com
+postonboarding.in@capgemini.com--9967026651
+
+
+  
